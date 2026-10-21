@@ -1,4 +1,4 @@
-﻿name: Publish TITAN to GitHub Pages
+name: Publish TITAN to GitHub Pages
 
 on:
   push:
@@ -14,6 +14,9 @@ concurrency:
 
 jobs:
   build:
+    permissions:
+      contents: read
+      pages: read
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
