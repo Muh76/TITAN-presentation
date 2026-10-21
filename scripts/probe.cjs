@@ -1,0 +1,2 @@
+const { chromium } = require('playwright-chromium');
+(async()=>{const b=await chromium.launch({headless:true});const p=await b.newPage({viewport:{width:1280,height:720}});p.on('pageerror',e=>console.log('PAGEERROR',e.message));await p.goto('http://localhost:3030/1',{waitUntil:'networkidle'});await p.screenshot({path:'tmp/slide-1.png'});console.log(await p.locator('.slidev-layout').evaluateAll(es=>es.map(e=>({text:e.innerText.slice(0,100),rect:e.getBoundingClientRect().toJSON(),cls:e.className}))));await b.close()})().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,1 @@
+const{chromium}=require('playwright-chromium');(async()=>{const b=await chromium.launch();const p=await b.newPage();for(const mode of ['true','clicks']){await p.goto('http://localhost:3030/1?print='+mode,{waitUntil:'networkidle'});console.log(mode,await p.locator('.slidev-page-1 .slidev-vclick-hidden').count())}await b.close()})()

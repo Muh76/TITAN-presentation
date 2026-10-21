@@ -1,0 +1,27 @@
+{
+  "name": "titan-presentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "slidev TITAN.md",
+    "build": "slidev build TITAN.md",
+    "export": "slidev export TITAN.md --output output/TITAN-guided.pdf",
+    "export:steps": "slidev export TITAN.md --with-clicks --output output/TITAN-reveal-states.pdf",
+    "check": "node scripts/check-deck.cjs",
+    "dev:backup": "slidev TITAN-backup.md --port 3031",
+    "build:backup": "slidev build TITAN-backup.md --out dist-backup",
+    "export:backup": "slidev export TITAN-backup.md --output output/TITAN-backup.pdf"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "^0.25.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.64.1"
+  }
+}
